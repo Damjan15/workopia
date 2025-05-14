@@ -1,0 +1,15 @@
+{
+  "name": "damjan15/workopia",
+  "description": "Job listing application",
+  "authors": [
+    {
+      "name": "Damjan Stamenov"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Framework\\": "Framework/",
+      "App\\": "App/"
+    }
+  }
+}
