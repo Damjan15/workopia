@@ -2,6 +2,7 @@
 
 namespace Framework;
 
+use App\controllers\ErrorController;
 
 class Router
 {
@@ -112,6 +113,6 @@ class Router
             }
         }
 
-        $this->error();
+        ErrorController::notFound();
     }
 }

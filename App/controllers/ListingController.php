@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\controllers\ErrorController;
 use Framework\Database;
 
 class ListingController
@@ -52,6 +53,12 @@ class ListingController
         ];
 
         $listing = $this->db->query('SELECT * FROM listings WHERE id = :id', $params)->fetch();
+
+        // Check if listing exists
+        if (!$listing) {
+            ErrorController::notFound('Listing Not Found!');
+            return;
+        }
 
         loadView('listings/show', [
             'listing' => $listing,
